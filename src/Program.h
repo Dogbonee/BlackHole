@@ -14,6 +14,9 @@
 
 class Program {
 
+   const sf::VideoMode SCREEN_RES;
+
+
     sf::RenderWindow m_window;
     sf::Clock m_clock;
     float dt;

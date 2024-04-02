@@ -27,7 +27,7 @@ void BlackHole::ManageBlackHole(float dt)
         float distance = sqrt(pow(distanceTriangle.x,2) + pow(distanceTriangle.y, 2));
 
 
-        if(distance < m_shape.getRadius()) distance += 100000;
+        if(distance < m_shape.getRadius() - 10) distance += 100000;
         float appliedGravity = abs(m_gravity / pow(distance,2));
 
         //if(appliedGravity > m_gravity) std::cout<<appliedGravity<<'\n';

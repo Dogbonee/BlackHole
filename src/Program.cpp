@@ -4,13 +4,13 @@
 
 #include "Program.h"
 
-Program::Program() : m_window(sf::VideoMode(1920,1080), "Default Name", sf::Style::Fullscreen),
+Program::Program() : SCREEN_RES{sf::VideoMode::getDesktopMode()},m_window(SCREEN_RES, "Default Name", sf::Style::Fullscreen),
                       m_blackHole(m_photons)
 {
     light1 = new LightSource(sf::Vector2f(200, 270), m_photons);
-    light2 = new LightSource(sf::Vector2f(1720, 270), m_photons);
-    light3 = new LightSource(sf::Vector2f(200, 810), m_photons);
-    light4 = new LightSource(sf::Vector2f(1720, 810), m_photons);
+    light2 = new LightSource(sf::Vector2f(SCREEN_RES.width - 200, 270), m_photons);
+    light3 = new LightSource(sf::Vector2f(200, SCREEN_RES.height - 270), m_photons);
+    light4 = new LightSource(sf::Vector2f(SCREEN_RES.width-200, SCREEN_RES.height - 270), m_photons);
 }
 
 Program::~Program()
